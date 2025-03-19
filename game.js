@@ -561,6 +561,8 @@ class ConstellationGame {
   }
   
   handleKeyDown(event) {
+    if (!this.gameActive) return;
+    
     const key = event.key.toLowerCase();
     
     // Move forward/backward
@@ -581,6 +583,8 @@ class ConstellationGame {
   }
   
   handleKeyUp(event) {
+    if (!this.gameActive) return;
+    
     const key = event.key.toLowerCase();
     
     // Move forward/backward
