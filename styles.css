@@ -145,3 +145,56 @@ button:hover {
   display: none;
 }
 
+#constellation-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 400px;
+}
+
+#discovery-screen {
+  text-align: center;
+}
+
+#discovery-name {
+  font-size: 1.4rem;
+  color: #64ffda;
+  font-style: italic;
+}
+
+#discoverer-name {
+  color: #ffeb3b;
+}
+
+#sector-coordinates {
+  font-family: monospace;
+  color: #64b5f6;
+}
+
+.mini-map {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(100, 149, 237, 0.8);
+  border-radius: 5px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.info-popup {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(100, 149, 237, 0.8);
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  max-width: 300px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}

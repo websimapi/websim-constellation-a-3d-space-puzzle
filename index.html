@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Constellation: A 3D Space Puzzle</title>
+  <title>Constellation Explorer: Infinite Space</title>
   <link rel="stylesheet" href="styles.css">
   <script type="importmap">
     {
@@ -19,37 +19,55 @@
     
     <div id="ui-overlay">
       <div id="welcome-screen" class="screen">
-        <h1>Constellation</h1>
-        <p>A collaborative 3D space puzzle</p>
+        <h1>Constellation Explorer</h1>
+        <p>Journey through infinite space, discover and name new constellations</p>
         <div class="form-container">
           <input type="text" id="username-input" placeholder="Enter your username" maxlength="15">
-          <button id="start-button">Join the Stars</button>
+          <button id="start-button">Begin Exploration</button>
         </div>
       </div>
       
       <div id="game-ui" class="hidden">
         <div id="top-bar">
-          <div id="constellation-goal">
-            <span>Current Goal:</span>
-            <span id="constellation-name">Orion</span>
+          <div id="location-info">
+            <span>Sector:</span>
+            <span id="sector-coordinates">0,0,0</span>
           </div>
-          <div id="timer">Time: <span id="time-left">120</span>s</div>
-          <div id="players-counter">Players: <span id="player-count">1</span></div>
+          <div id="constellation-info">
+            <span id="constellation-status">Exploring</span>
+          </div>
+          <div id="players-counter">Explorers: <span id="player-count">1</span></div>
         </div>
         <div id="controls-hint" class="hint-box">
-          <p>Move: W,A,S,D or Arrow Keys | Connect Stars: Click and drag</p>
+          <p>Move: W,A,S,D or Arrow Keys | Connect Stars: Click and drag | Name: N key</p>
         </div>
       </div>
       
-      <div id="completion-screen" class="screen hidden">
-        <h2>Constellation Complete!</h2>
-        <p>You and <span id="completion-player-count">0</span> others connected the stars.</p>
-        <button id="play-again-button">Play Again</button>
+      <div id="constellation-form" class="screen hidden">
+        <h2>Name Your Discovery</h2>
+        <p>You've connected <span id="star-count">0</span> stars in a new pattern!</p>
+        <div class="form-container">
+          <input type="text" id="constellation-name-input" placeholder="Enter constellation name" maxlength="30">
+          <button id="save-constellation-button">Register Discovery</button>
+          <button id="cancel-constellation-button">Cancel</button>
+        </div>
+      </div>
+      
+      <div id="discovery-screen" class="screen hidden">
+        <h2>New Discovery!</h2>
+        <p>You found <span id="discovery-name">a new constellation</span>!</p>
+        <p>First discovered by <span id="discoverer-name">Explorer</span></p>
+        <button id="continue-exploration-button">Continue Exploration</button>
       </div>
     </div>
   </div>
 
   <script type="module" src="config.js"></script>
+  <script type="module" src="starGenerator.js"></script>
+  <script type="module" src="spaceChunks.js"></script>
+  <script type="module" src="constellationManager.js"></script>
+  <script type="module" src="playerController.js"></script>
+  <script type="module" src="uiManager.js"></script>
   <script type="module" src="game.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>

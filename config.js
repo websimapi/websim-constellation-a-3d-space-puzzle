@@ -1,15 +1,23 @@
 // Game Configuration
 export const CONFIG = {
   // Game settings
-  gameTime: 120, // seconds
   minPlayers: 1,
   
+  // Chunk settings
+  chunkSize: 250,
+  renderDistance: 3, // How many chunks in each direction to render
+  
   // Star field settings
-  starCount: 500,
+  starsPerChunk: 100,
   starFieldRadius: 1000,
   
   // Constellation settings
-  constellations: [
+  minStarsForConstellation: 5,
+  maxStarsForConstellation: 15,
+  constellationConnectionDistance: 150,
+  
+  // Predefined constellations
+  knownConstellations: [
     {
       name: "Orion",
       difficulty: 1,
@@ -77,6 +85,8 @@ export const CONFIG = {
   connectionColor: 0x4fc3f7,
   playerConnectionColor: 0x2979ff,
   otherPlayersConnectionColor: 0x7c4dff,
-  completedConnectionColor: 0x00e676
+  completedConnectionColor: 0x00e676,
+  
+  // Random seed for procedural generation
+  baseSeed: "constellation-explorer-v1"
 };
-
