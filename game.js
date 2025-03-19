@@ -28,6 +28,12 @@ class ConstellationGame {
     this.timeRemaining = CONFIG.gameTime;
     this.timerInterval = null;
     
+    // Initialize movement properties
+    this.moveForward = false;
+    this.moveBackward = false;
+    this.turnLeft = false;
+    this.turnRight = false;
+    
     // Setup event listeners
     this.setupEventListeners();
     
@@ -776,4 +782,3 @@ window.addEventListener('DOMContentLoaded', () => {
   const game = new ConstellationGame();
   game.otherPlayerShips = {};
 });
-
